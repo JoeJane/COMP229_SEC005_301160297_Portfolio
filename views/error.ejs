@@ -1,0 +1,18 @@
+<%- include partials/header.ejs %>
+<%- include partials/main_nav.ejs %>
+
+<!-- error page  -->
+<div class="pt-5 pb-3  container">
+    <div class="row justify-content-center">
+        <div class="container-title text-center mb-4 pb-2">
+            <div class="titles">
+                <h2 class="title text-capitalize mb-4 fw-bold">
+                    <%= error.status %> | <%= message %>
+                </h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include partials/bottom_nav.ejs %>
+<%- include partials/footer.ejs %>

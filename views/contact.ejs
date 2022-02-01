@@ -1,0 +1,97 @@
+<%- include partials/header.ejs %>
+<%- include partials/main_nav.ejs %>
+
+<!-- contact me page -->
+<div class="pt-5 pb-3  container">
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center">
+                    <div class="container-title text-center pb-2">
+                        <div class="titles">
+                            <h2 class="title text-capitalize mb-4 fw-bold">Contact Me</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="container aos-init aos-animate">
+            <div class="row mt-2">
+                <div class="col-lg-4">
+                    <!-- my contact information  -->
+                    <div class="info">
+                        <div class="col d-flex align-items-start address">
+                            <div class="icon-square bg-light text-dark flex-shrink-0 me-4">
+                                <i class="fas fa-map-marker-alt fa-2x"></i>
+                            </div>
+                            <div>
+                                <h4>Location:</h4>
+                                <p>68 Corporate Drive, Scarborough, Ontario, Canada</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start email">
+                            <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
+                                <i class="far fa-envelope fa-2x"></i>
+                            </div>
+                            <div>
+                                <h4>Email:</h4>
+                                <p>info@example.com</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start phone">
+                            <div class="icon-square bg-light text-dark flex-shrink-0 me-4">
+                                <i class="fas fa-mobile-alt fa-2x"></i>
+                            </div>
+                            <div>
+                                <h4>Call:</h4>
+                                <p>+1 123 456 7890</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- user contact information -->
+                <div class="col-lg-8 mt-3 mt-lg-0 p-5 pt-0">
+                    <form action="/contact" method="post" role="form" class="php-email-form">
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <input type="text" name="fname" class="form-control" id="fname"
+                                    placeholder="Your First Name" required="">
+                            </div>
+                            <div class="col-md-6 form-group mt-3 mt-md-0">
+                                <input type="text" name="lname" class="form-control" id="lname"
+                                    placeholder="Your Last Name" required="">
+                            </div>
+                        </div>
+                        <div class="row form-group mt-3">
+                            <div class="col-md-6 form-group">
+                                <input type="text" name="phone" class="form-control" id="phone"
+                                    placeholder="Contact Number" required="">
+                            </div>
+                            <div class="col-md-6 form-group mt-3 mt-md-0">
+                                <input type="email" class="form-control" name="email" id="email"
+                                    placeholder="Your Email" required="">
+                            </div>
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
+                                required="">
+                        </div>
+                        <div class="form-group mt-3">
+                            <textarea class="form-control" name="message" rows="5" placeholder="Message"
+                                required=""></textarea>
+                        </div>
+                        <div class="mt-4 text-center"><button type="submit" class="btn btn-primary">Send
+                                Message</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<%- include partials/bottom_nav.ejs %>
+<%- include partials/footer.ejs %>
