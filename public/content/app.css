@@ -1,0 +1,43 @@
+/**
+ * File name: app.css
+ * Student name: Jane Aarthy Joseph
+ * Student ID: 301160297
+ * Date: 2022-02-01 
+ */
+
+.shadow-dark-lg {
+    box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 12%) !important;
+}
+.rounded-3x {
+    border-radius: 1rem;
+}
+
+.services .icon-box .icon i {
+    font-size: 36px;
+    transition: 0.5s;
+    position: relative;
+}
+.services .iconbox-blue i {
+    color: #47aeff;
+}
+
+.feature-widget {
+    padding: 30px 45px;
+    background-color: #ffffff;
+    -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -webkit-box-shadow: -0.0625rem 0 0.625rem 0 rgb(0 0 0 / 7%), 0.3125rem 1.25rem 2.5rem 0 rgb(0 0 0 / 4%) !important;
+    box-shadow: -0.0625rem 0 0.625rem 0 rgb(0 0 0 / 7%), 0.3125rem 1.25rem 2.5rem 0 rgb(0 0 0 / 4%) !important;
+}
+.rounded {
+    border-radius: 10px !important;
+}
+
+.contact .info {
+    width: 100%;
+    background: #fff;
+}
+
+.contact .info .email, .contact .info .phone {
+    margin-top: 10px;
+}
