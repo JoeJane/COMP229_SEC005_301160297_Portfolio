@@ -6,7 +6,7 @@ MyPortfolio is a nodejs based web application.
 
 ## Installation
 
-Use the package manager [npm](https://nodejs.org/en/download/) to install MyPortfolio.
+Use the package manager [npm](https://nodejs.org/en/download/) to install MyPortfolio dependencies.
 
 ```bash
 npm install
