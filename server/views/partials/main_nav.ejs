@@ -1,0 +1,60 @@
+<!-- main navigation bar section -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/" style="padding-left: 20px;">
+            <!-- my logo -->
+            <img src="/assests/images/logo.png" alt="" width="40" height="34" class="d-inline-block align-text-bottom">
+            <!-- if user is authorized display the name -->
+            <% if (typeof displayName == 'string' && displayName) { %>
+                <span class="ms-4 h4">Welcome, <%= displayName %> </span>
+            <% } %>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- menu items -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link <%= (title === 'Home') ? 'active' : '' %>" href="/home"><i class="fas fa-lg fa-house"></i> Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link <%= (title === 'About') ? 'active' : '' %>" href="/about"><i class="fa-solid fa-lg fa-circle-info"></i> About Me</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link <%= (title === 'Projects') ? 'active' : '' %>" href="/projects"><i class="fas fa-lg fa-cubes"></i> Projects</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link <%= (title === 'Services') ? 'active' : '' %>" href="/services"><i class="fas fa-lg fa-gear"></i> Services</a>
+                </li>
+
+                <!-- Only authorized user can view businessContacts-->
+                <% if (typeof displayName == 'string' && displayName) { %>
+                    <li class="nav-item">
+                        <a class="nav-link <%= (title === 'Business Contacts') ? 'active' : '' %>"
+                           href="/businessContact"><i class="fas fa-lg fa-id-card"></i> Business Contacts</a>
+                    </li>
+                <% } %>
+
+                <li class="nav-item">
+                    <a class="nav-link <%= (title === 'Contact') ? 'active' : '' %>" href="/contact"><i class="fas fa-lg fa-phone"></i> Contact Me</a>
+                </li>
+
+                <!-- Only authorized user can edit/delete businessContacts-->
+                <% if (typeof displayName == 'string' && displayName) { %>
+                    <li class="nav-item"><a href="/logout" class="nav-link">
+                            <i class="fa-solid fa-sign-out-alt"></i> Logout</a></li>
+                <% } else { %>
+                    <li class="nav-item"><a href="/login" class="nav-link">
+                            <i class="fas fa-lg fa-sign-in-alt"></i> Login</a></li>
+                <% } %>
+
+            </ul>
+        </div>
+    </div>
+</nav>

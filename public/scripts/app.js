@@ -5,21 +5,24 @@
  * Date: 2022-02-01 
  */
 
-(function () {
+$(function() {
+    console.log( "App Started..." );
 
-    function Start() {
-        console.log("My App started....");
-
+    if($('#typed').length){
         var options = {
             strings: [".", "Jane Aarthy Joseph.", "a Software Engineer.", "a Student at Centennial College."],
             typeSpeed: 30,
             backDelay: 2000,
             backSpeed: 30,
             loop: true
-          };
-        
-          var typed = new Typed('#typed', options);
-    }
+        };
 
-    window.addEventListener("load", Start);
-})();
+        var typed = new Typed('#typed', options);
+    }
+    /*$(".btn-danger").click(function(event) {
+        if(!confirm("Are you sure?")){
+            event.preventDefault();
+            window.location.assign('/book');
+        }
+    });*/
+});

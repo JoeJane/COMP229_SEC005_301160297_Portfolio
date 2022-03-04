@@ -1,0 +1,71 @@
+<!--Import Header and Navigation bar-->
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+
+<!--Main Content-->
+<div class="container">
+    <div class="row">
+        <div class="offset-md-1 col-md-11 mt-5">
+
+            <h1><%= title %></h1>
+            <% if (typeof displayName == 'string' && displayName) { %>
+            <a href="/businessContact/add" class="btn btn-outline-dark float-end mb-1" role="button">
+                <i class="fas fa-plus-circle"></i> Add a Business Contact
+            </a>
+            <% } %>
+
+            <table class="table table-centered mb-0 table-bordered table-striped table-hover">
+                <!--Header Row-->
+                <thead class="table-dark">
+                <tr class="d-flex">
+                    <% if (typeof displayName == 'string' && displayName) { %>
+                        <th class="col-4">Name</th>
+                        <th class="col-3">Contact Number</th>
+                        <th class="col-3">Email</th>
+                        <th class="text-center col-1">Edit</th>
+                        <th class="text-center col-1">Delete</th>
+                    <% } else { %>
+                        <th class="col-4">Name</th>
+                        <th class="col-3">Contact Number</th>
+                        <th class="col-5">Email</th>
+                    <% } %>
+                </tr>
+                </thead>
+
+                <!--Repeatable Table Row-->
+                <tbody>
+                    <% for(let i=0; i < businessContacts.length; i++) { %>
+                    <tr class="d-flex">
+                        <% if (typeof displayName == 'string' && displayName) { %>
+                            <td class="col-4"><%= businessContacts[i].name %></td>
+                            <td class="col-3"><%= businessContacts[i].contactNumber %></td>
+                            <td class="col-3"><%= businessContacts[i].email %></td>
+                            <td class="text-center col-1">
+                                <a href="/businessContact/edit/<%= businessContacts[i]._id %>" class="btn btn-outline-primary btn-sm">
+                                    <i class="fas fa-pencil-alt"></i></a>
+                            </td>
+                            <td class="text-center col-1">
+                                <a href="/businessContact/delete/<%= businessContacts[i]._id %>" class="btn btn-outline-danger btn-sm">
+                                    <i class="fas fa-trash-alt"></i></a>
+                            </td>
+                        <% } else { %>
+                            <td class="col-4"><%= businessContacts[i].name %></td>
+                            <td class="col-3"><%= businessContacts[i].contactNumber %></td>
+                            <td class="col-5"><%= businessContacts[i].email %></td>
+                        <% } %>
+
+                    </tr>
+                    <%}%>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<!-- Import Footer and Bottom navigation bar-->
+<%- include ../partials/bottom_nav.ejs %>
+<%- include ../partials/footer.ejs %>
+
+
+
