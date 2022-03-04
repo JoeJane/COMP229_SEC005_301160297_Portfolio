@@ -36,6 +36,7 @@
                 <tbody>
                     <% for(let i=0; i < businessContacts.length; i++) { %>
                     <tr class="d-flex">
+                        <!-- if usre is authenticated  -->
                         <% if (typeof displayName == 'string' && displayName) { %>
                             <td class="col-4"><%= businessContacts[i].name %></td>
                             <td class="col-3"><%= businessContacts[i].contactNumber %></td>
@@ -49,6 +50,7 @@
                                     <i class="fas fa-trash-alt"></i></a>
                             </td>
                         <% } else { %>
+                            <!-- if usre is not authenticated  -->
                             <td class="col-4"><%= businessContacts[i].name %></td>
                             <td class="col-3"><%= businessContacts[i].contactNumber %></td>
                             <td class="col-5"><%= businessContacts[i].email %></td>
